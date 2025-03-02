@@ -29,24 +29,23 @@ processed_features=[]
 
 for sentence in range(0,len(features)):
   # Remove all the special charcters
-               processed_feature=re.sub(r'\W',' ',str(features[sentence]))
+  processed_feature=re.sub(r'\W',' ',str(features[sentence]))
 
   # remove all single characters
-               processed_feature=re.sub(r'\s+[a-zA-Z]\s+',' ',processed_feature)
+  processed_feature=re.sub(r'\s+[a-zA-Z]\s+',' ',processed_feature)
 
   # remove single characters from the start
-               processed_feature=re.sub(r'^[a-zA-Z]\s+', ' ',processed_feature)
+  processed_feature=re.sub(r'^[a-zA-Z]\s+', ' ',processed_feature)
 
   # remove 'b' char from the text
-               processed_feature=re.sub(r'^b\s+', '',processed_feature)
+  processed_feature=re.sub(r'^b\s+', '',processed_feature)
 
   # substitue multiple spaces with single space
-               processed_feature=re.sub(r'\s+', ' ',processed_feature,flags=re.I)
+  processed_feature=re.sub(r'\s+', ' ',processed_feature,flags=re.I)
 
   # Convert to lower case
-               processed_feature=processed_feature.lower()
-
-               processed_features.append(processed_feature)
+  processed_feature=processed_feature.lower()
+  processed_features.append(processed_feature)
 
 # feature extraction from text
 
